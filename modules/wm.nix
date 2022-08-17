@@ -86,16 +86,6 @@ let
         terminal = "alacritty";
         modifier = "Mod4";  # this is the "windows" key
         defaultWorkspace = "workspace number 1";
-        assigns = {
-          "1" = [
-            { class = "^Mailspring$"; }
-            { class = "^Microsoft Teams - Preview"; }
-          ];
-          "2" = [
-            { class = "^Firefox$"; }
-            { class = "^google-chrome$"; }
-          ];
-        };
         floating.criteria = [ { title = "^zoom$"; } ];
         focus.mouseWarping = false;
         bars = [{
@@ -106,7 +96,7 @@ let
           fonts = {
             names = [ "DejaVu Sans Mono" "FontAwesome5Free" ];
             style = "Normal";
-            size = 9.0;
+            size = 12.0;
           };
           colors = {
             separator  = base03;

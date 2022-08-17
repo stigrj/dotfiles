@@ -3,19 +3,17 @@ let
   extraDesktopPackages =
     if config.dotfiles.desktop.enable then
       with pkgs; [
-        zoom
-        wavebox
         rider
       ]
     else [];
 in
 {
-  home.username = "nobody";
-  home.homeDirectory = "/home/nobody";
+  home.username = "stig";
+  home.homeDirectory = "/home/stig";
 
   dotfiles = {
     desktop = {
-      enable = false;
+      enable = true;
       dropbox.enable = false;
       onedrive.enable = false;
       laptop = false;
@@ -26,15 +24,15 @@ in
       devel = {
         enable = true;
         nix = true;
-        db = false;
+        db = true;
         dotnet = {
             enable = true;
             combined = true;
         };
-        node = false;
-        rust = false;
+        node = true;
+        rust = true;
         haskell = false;
-        python = false;
+        python = true;
         go = false;
         java = false;
         clojure = false;
@@ -48,7 +46,7 @@ in
       };
       kubernetes = true;
       cloud = true;
-      geo = false;
+      geo = true;
     };
     extraDotfiles = [
       "bcrc"
@@ -57,7 +55,7 @@ in
       "haskeline"
       "taskrc"
     ];
-    vimDevPlugins = false;
+    vimDevPlugins = true;
   };
 
   home.packages = with pkgs; [
@@ -79,18 +77,8 @@ in
 
   programs = {
     git = {
-      userEmail = "jonas.juselius@tromso.serit.no";
-      userName = "Jonas Juselius";
-      signing = {
-        key = "jonas@juselius.io";
-      };
-    };
-
-    ssh.matchBlocks = {
-      example = {
-        user = "foo";
-        hostname = "acme.com";
-      };
+      userEmail = "stig.r.jensen@oceanbox.io";
+      userName = "Stig Rune Jensen";
     };
   };
 
