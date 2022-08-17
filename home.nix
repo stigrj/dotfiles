@@ -6,14 +6,13 @@ let
         zoom
         wavebox
         rider
-        mailspring
       ]
     else [];
 in
 {
   dotfiles = {
     desktop = {
-      enable = false;
+      enable = true;
       dropbox.enable = false;
       onedrive.enable = false;
       laptop = false;
@@ -24,12 +23,12 @@ in
       devel = {
         enable = true;
         nix = true;
-        db = false;
-        dotnet = false;
-        node = false;
-        rust = false;
+        db = true;
+        dotnet = true;
+        node = true;
+        rust = true;
         haskell = false;
-        python = false;
+        python = true;
         go = false;
         java = false;
         clojure = false;
@@ -43,7 +42,7 @@ in
       };
       kubernetes = true;
       cloud = true;
-      geo = false;
+      geo = true;
     };
     extraDotfiles = [
       "bcrc"
@@ -74,18 +73,8 @@ in
 
   programs = {
     git = {
-      userEmail = "jonas.juselius@tromso.serit.no";
-      userName = "Jonas Juselius";
-      signing = {
-        key = "jonas@juselius.io";
-      };
-    };
-
-    ssh.matchBlocks = {
-      example = {
-        user = "foo";
-        hostname = "acme.com";
-      };
+      userEmail = "stig.r.jensen@oceanbox.io";
+      userName = "Stig Rune Jensen";
     };
   };
 
