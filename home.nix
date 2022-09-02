@@ -98,6 +98,10 @@ in
         user = "stig";
         hostname = "woolf.chem.uit.no";
       };
+      ekman = {
+        user = "stig";
+        hostname = "ekman.oceanbox.io";
+      };
     };
   };
 
