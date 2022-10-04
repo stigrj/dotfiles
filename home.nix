@@ -51,7 +51,7 @@ in
       "haskeline"
       "taskrc"
     ];
-    vimDevPlugins = false;
+    vimDevPlugins = true;
   };
 
   home.packages = with pkgs; [
