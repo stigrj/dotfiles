@@ -21,7 +21,7 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 set history=1000
-set mouse=a
+set mouse=v
 set completeopt=menuone,menu,longest
 set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox
 set wildmode=longest,list,full
