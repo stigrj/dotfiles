@@ -85,6 +85,7 @@ let
     #wireshark-qt
     google-chrome
     firefox
+    surf
     drive
     rdesktop
     remmina
