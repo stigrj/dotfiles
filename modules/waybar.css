@@ -4,8 +4,7 @@
     /* `ttf-font-awesome` is required to be installed for icons */
     font-family: "Roboto Mono Medium", Helvetica, Arial, sans-serif;
     /* adjust font-size value to your liking: */
-    font-size: 14px;
-    font-weight: bolder;
+    font-size: 18px;
 
     min-height: 0;
 }

@@ -61,6 +61,11 @@ let
     home-manager = "home-manager -f ~/.dotfiles";
     lock = "xset s activate";
     dig = "dog";
+    drifters = "cd /home/stig/Oceanbox/Drifters";
+    poseidon = "cd /home/stig/Oceanbox/Poseidon";
+    atlantis = "cd /home/stig/Oceanbox/Poseidon/src/Atlantis";
+    sorcerer = "cd /home/stig/Oceanbox/Poseidon/src/Sorcerer";
+    hipster = "cd /home/stig/Oceanbox/Poseidon/src/Hipster";
     # ps = "procs";
     # sed = "sed -r";
   }
