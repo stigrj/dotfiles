@@ -87,9 +87,15 @@ let
   python = with pkgs; [
     (python3.withPackages (ps: with ps; [
         numpy
+        netcdf4
         matplotlib
         tkinter
         virtualenv
+        jupyter
+        pandas
+        scipy
+        plotly
+        networkx
       ]))
   ];
 

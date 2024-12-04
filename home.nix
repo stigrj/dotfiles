@@ -3,19 +3,27 @@ let
   extraDesktopPackages =
     if config.dotfiles.desktop.enable then
       with pkgs; [
-        zoom
-        wavebox
+        zoom-us
+        ferdium
         rider
       ]
     else [];
 in
 {
-  home.username = "nobody";
-  home.homeDirectory = "/home/nobody";
+  home.username = "stig";
+  home.homeDirectory = "/home/stig";
 
   dotfiles = {
     desktop = {
-      enable = false;
+      enable = true;
+      wayland.enable = true;
+      hyprland = {
+          enable = true;
+          #monitor = [
+          #    "HDMI-A-3, 3840x1600, 0x160, 1.0"
+          #    "DP-1, 1200x1920, 3840x0, 1.0"
+          #];
+      };
       dropbox.enable = false;
       onedrive.enable = false;
       laptop = false;
@@ -26,15 +34,15 @@ in
       devel = {
         enable = true;
         nix = true;
-        db = false;
+        db = true;
         dotnet = {
             enable = true;
             combined = true;
         };
-        node = false;
-        rust = false;
+        node = true;
+        rust = true;
         haskell = false;
-        python = false;
+        python = true;
         go = false;
         java = false;
         clojure = false;
@@ -48,7 +56,7 @@ in
       };
       kubernetes = true;
       cloud = true;
-      geo = false;
+      geo = true;
     };
     extraDotfiles = [
       "bcrc"
@@ -57,7 +65,7 @@ in
       "haskeline"
       "taskrc"
     ];
-    vimDevPlugins = false;
+    vimDevPlugins = true;
   };
 
   home.packages = with pkgs; [
@@ -77,19 +85,41 @@ in
     VISUAL = "nvim";
   };
 
+  services.lorri.enable = true;
+
   programs = {
     git = {
-      userEmail = "jonas.juselius@tromso.serit.no";
-      userName = "Jonas Juselius";
-      signing = {
-        key = "jonas@juselius.io";
+      userEmail = "stig.r.jensen@oceanbox.io";
+      userName = "Stig Rune Jensen";
+      extraConfig = {
+        grep.lineNumber = true;
       };
     };
 
     ssh.matchBlocks = {
-      example = {
-        user = "foo";
-        hostname = "acme.com";
+      saga = {
+        user = "stig";
+        hostname = "saga.sigma2.no";
+      };
+      fram = {
+        user = "stig";
+        hostname = "fram.sigma2.no";
+      };
+      betzy = {
+        user = "stig";
+        hostname = "betzy.sigma2.no";
+      };
+      sandel = {
+        user = "stig";
+        hostname = "sandel.chem.uit.no";
+      };
+      woolf = {
+        user = "stig";
+        hostname = "woolf.chem.uit.no";
+      };
+      ekman = {
+        user = "stig";
+        hostname = "ekman.oceanbox.io";
       };
     };
   };
