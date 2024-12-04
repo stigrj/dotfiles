@@ -24,13 +24,14 @@ let
         "$wofipass" = "${pkgs.wofi-pass}/bin/wofi-pass";
 
         general = {
-          gaps_in = 0;
-          gaps_out = 0;
+          gaps_in = 1;
+          gaps_out = 1;
 
           border_size = 2;
 
           # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-          "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+          # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+          "col.active_border" = "rgba(00ff99ee)";
           "col.inactive_border" = "rgba(595959aa)";
 
           # Set to true enable resizing windows by clicking and dragging on borders and gaps
@@ -39,11 +40,11 @@ let
           # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
           allow_tearing = false;
 
-          layout = "master";
+          # layout = "master";
         };
 
         decoration = {
-          rounding = 3;
+          rounding = 2;
 
           # Change transparency of focused and unfocused windows
           active_opacity = 1.0;
@@ -245,9 +246,9 @@ let
 
           label = [
             {
-              position = "-130, -70";
-              halign = "right";
-              valign = "top";
+              position = "0, 80";
+              halign = "center";
+              valign = "center";
               font_size = 70;
               text = "cmd[update:1000] echo \"<span foreground='white'>$(date +\"%T\")</span>\"";
             }

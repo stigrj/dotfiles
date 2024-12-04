@@ -84,6 +84,7 @@ let
   desktop = with pkgs; [
     #wireshark-qt
     google-chrome
+    microsoft-edge
     #firefox
     drive
     rdesktop
