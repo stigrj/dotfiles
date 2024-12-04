@@ -94,6 +94,17 @@ let
         matplotlib
         tkinter
         virtualenv
+        netcdf4
+        pytest
+        jupyter
+        pandas
+        scipy
+        plotly
+        breathe
+        sphinx
+        sphinx-rtd-theme
+        qcelemental
+        networkx
       ]
     ))
   ];
