@@ -71,8 +71,8 @@ let
                 ];
               };
               tray = {
-                icon-size = 20;
-                spacing = 10;
+                icon-size = 22;
+                spacing = 15;
               };
 
               clock = {
