@@ -11,24 +11,15 @@ let
     else [];
 in
 {
-  home.username = "nobody";
-  home.homeDirectory = "/home/nobody";
+  home.username = "stig";
+  home.homeDirectory = "/home/stig";
 
   home.packages = with pkgs; [
   ] ++ extraDesktopPackages;
 
   dotfiles = {
     desktop = {
-      enable = false;
-      wayland.enable = true;
-      hyprland = {
-        enable = true;
-        monitor = [
-          # "DP-1, preferred, 0x0, 1.25"
-          # "HDMI-A-1, preferred, 2048x0, 1.25"
-        ];
-      };
-      sway.enable = true;
+      enable = true;
       dropbox.enable = false;
       onedrive.enable = false;
       laptop = false;
@@ -39,15 +30,15 @@ in
       devel = {
         enable = true;
         nix = true;
-        db = false;
+        db = true;
         dotnet = {
             enable = true;
             combined = true;
         };
         node = true;
-        rust = false;
+        rust = true;
         haskell = false;
-        python = false;
+        python = true;
         go = false;
         java = false;
         clojure = false;
@@ -61,7 +52,7 @@ in
       };
       kubernetes = true;
       cloud = true;
-      geo = false;
+      geo = true;
     };
     extraDotfiles = [
       "bcrc"
@@ -91,17 +82,10 @@ in
 
   programs = {
     git = {
-      userEmail = "jonas.juselius@oceanbox.io";
-      userName = "Jonas Juselius";
-      signing = {
-        key = "jonas.juselius@juselius.io";
-      };
-    };
-
-    ssh.matchBlocks = {
-      example = {
-        user = "foo";
-        hostname = "acme.com";
+      userEmail = "stig.r.jensen@oceanbox.io";
+      userName = "Stig Rune Jensen";
+      extraConfig = {
+        grep.lineNumber = true;
       };
     };
   };
