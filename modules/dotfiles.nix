@@ -447,7 +447,7 @@ in
     keyboard = {
       layout = mkOption {
         type = types.str;
-        default = "us(altgr-intl)";
+        default = "no";
       };
       model = mkOption {
         type = types.str;
