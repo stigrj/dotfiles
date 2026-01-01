@@ -27,7 +27,7 @@ let
                 # "sway/window"
               ];
               modules-right = [
-                (if cfg.laptop then "battery" else "")
+                #(if cfg.laptop then "battery" else "")
                 (if cfg.laptop then "backlight" else "")
                 "disk"
                 "cpu"

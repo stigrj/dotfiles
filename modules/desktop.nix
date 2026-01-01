@@ -158,7 +158,7 @@ let
       #  enable = true;
       # };
       gpg-agent = {
-        enable = true;
+        enable = false;
         enableSshSupport = false;
         defaultCacheTtl = 43200; # 12 hours
         defaultCacheTtlSsh = 43200;
@@ -309,16 +309,16 @@ let
 
     programs.ghostty = {
       enable = true;
+      installVimSyntax = true;
       enableFishIntegration = true;
       settings = {
         term = "xterm-256color";
-        working-directory = "home";
-        window-inherit-working-directory = false;
-        shell-integration-features = "cursor, sudo";
-        # shell-integration-features = "ssh-env, cursor, sudo";
         font-size = lib.mkDefault 13;
         theme = lib.mkDefault "Terafox";
-        app-notifications = "no-clipboard-copy";
+        quit-after-last-window-closed = false;
+        keybind = [
+          "ctrl+enter=unbind"
+        ];
       };
     };
 
