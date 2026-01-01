@@ -22,7 +22,7 @@ let
                 # "sway/window"
               ];
               modules-right = [
-                (if cfg.laptop then "battery" else "")
+                #(if cfg.laptop then "battery" else "")
                 (if cfg.laptop then "backlight" else "")
                 "disk"
                 "cpu"
@@ -56,8 +56,8 @@ let
                 format-icons = [ " " " " " " " " " " " " " " " " " " ];
             };
             tray = {
-              icon-size = 20;
-              spacing = 10;
+              icon-size = 22;
+              spacing = 15;
             };
 
             clock = {

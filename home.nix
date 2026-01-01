@@ -10,17 +10,16 @@ let
     config.allowUnfree = true;
   };
 
-  username = "";
-  fullname = "";
-  email = "";
+  username = "stig";
+  fullname = "Stig Rune Jensen";
+  email = "stig.r.jensen@oceanbox.io";
 
   extraDesktopPackages =
     if config.dotfiles.desktop.enable then
-      with pkgs; [
+      with pkgs;
+      [
         ferdium
         unstable.jetbrains.rider
-        # zoom-us
-        # discord
       ]
     else
       [ ];
@@ -33,7 +32,7 @@ in
     packages = with pkgs; [ ] ++ extraDesktopPackages;
 
     keyboard = {
-      layout = "us(altgr-intl)";
+      layout = "no";
       model = "pc104";
       options = [
         "eurosign:e"
@@ -48,34 +47,63 @@ in
   };
 
   programs = {
-    git = {
-      userEmail = email;
-      userName = fullname;
+    git.settings = {
+      user.email = email;
+      user.name = fullname;
+      extraConfig = {
+        grep.lineNumber = true;
+      };
     };
 
     ssh.matchBlocks = {
-      example = {
-        user = "nobody";
-        hostname = "acme.com";
+      saga = {
+        user = "${username}";
+        hostname = "saga.sigma2.no";
+      };
+      fram = {
+        user = "${username}";
+        hostname = "fram.sigma2.no";
+      };
+      betzy = {
+        user = "${username}";
+        hostname = "betzy.sigma2.no";
+      };
+      sandel = {
+        user = "${username}";
+        hostname = "sandel.chem.uit.no";
+      };
+      woolf = {
+        user = "${username}";
+        hostname = "woolf.chem.uit.no";
+      };
+      ekman = {
+        user = "${username}";
+        hostname = "ekman.ts.obx";
+      };
+      rossby = {
+        user = "${username}";
+        hostname = "rossby.ts.obx";
       };
     };
   };
 
   dotfiles = {
     desktop = {
-      enable = false;
+      enable = true;
       wayland.enable = true;
       hyprland = {
         enable = true;
-        # monitor = [
-        #   "DP-1, preferred, 0x0, 1.25"
-        #   "HDMI-A-1, preferred, 2048x0, 1.25"
-        # ];
+        monitor = [
+          #"DP-6, 1920x1080, 0x0, 1"
+          #"DP-5, 1920x1080, 1920x0, 1"
+          #"eDP-1, disable"
+          ", preferred, auto, 1"
+        ];
       };
       sway.enable = false;
       dropbox.enable = false;
       onedrive.enable = false;
-      laptop = false;
+      laptop = true;
       packages = {
         gnome = true;
         x11 = false;
@@ -87,23 +115,23 @@ in
     devel = {
       enable = true;
       nix = true;
-      db = false;
+      db = true;
       dotnet = {
-        enable = false;
+        enable = true;
         combined = true;
       };
-      node = false;
-      rust = false;
+      node = true;
+      rust = true;
       haskell = false;
-      python = false;
+      python = true;
       go = false;
       java = false;
       clojure = false;
     };
     packages = {
-      kubernetes = false;
-      cloud = false;
-      geo = false;
+      kubernetes = true;
+      cloud = true;
+      geo = true;
     };
     fish.vi-mode = false;
     atuin = false;
